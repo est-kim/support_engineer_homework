@@ -23,6 +23,7 @@ const normalizeDataField = (value) => {
 
   return value;
 };
+
 const readCSV = (filePath) => {
   const results = [];
 
