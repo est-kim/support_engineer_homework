@@ -32,7 +32,5 @@
 /backend/.DS_Store
 
 # general ignores
-
-# General ignores
 *.log
 .DS_Store
