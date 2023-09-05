@@ -8,7 +8,7 @@ function CancelledOrganizations({ accountData }) {
   };
 
   const cancelledOrganizations = accountData.filter(
-    (org) => org.status.toLowerCase().trim() === "cancelled"
+    (org) => org.status.trim().toLowerCase() === "cancelled"
   );
 
   return (

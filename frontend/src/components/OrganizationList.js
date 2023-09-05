@@ -33,12 +33,11 @@ function OrganizationList({ accountData }) {
           <tbody>
             {sortedData.map((org, index) => {
               const date = new Date(org.createdDate);
-              const formattedDate = `${date
-                .getDate()
-                .toString()
-                .padStart(2, "0")}/${(date.getMonth() + 1)
-                .toString()
-                .padStart(2, "0")}/${date.getFullYear()}`;
+              const day = date.getDate().toString().padStart(2, "0");
+              const month = (date.getMonth() + 1).toString().padStart(2, "0");
+              const year = date.getFullYear();
+              const formattedDate = `${day}/${month}/${year}`;
+              
               return (
                 <tr key={index}>
                   <td>{org.organizationId}</td>

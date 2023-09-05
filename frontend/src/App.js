@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import './App.css';
+import "./App.css";
 import OptimizationSettings from "./components/OptimizationSettings";
 import OrganizationList from "./components/OrganizationList";
 import CancelledOrganizations from "./components/CancelledOrganizations";
@@ -18,19 +18,31 @@ function App() {
       });
 
     fetch("/api/accountData")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Fetched accountData:", data);
-      setAccountData(data);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Fetched accountData:", data);
+        setAccountData(data);
+      });
   }, []);
+
+  const handleKeyDown = (e, callback) => {
+    if (e.key === "Enter") {
+      callback();
+    }
+  };
 
   return (
     <div>
-      <OptimizationSettings organizationData={organizationData} />
+      <OptimizationSettings
+        organizationData={organizationData}
+        handleKeyDown={handleKeyDown}
+      />
       <OrganizationList accountData={accountData} />
       <CancelledOrganizations accountData={accountData} />
-      <OrganizationDetails organizationData={organizationData} />
+      <OrganizationDetails
+        organizationData={organizationData}
+        handleKeyDown={handleKeyDown}
+      />
     </div>
   );
 }

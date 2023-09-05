@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function OptimizationSettings({ organizationData }) {
+function OptimizationSettings({ organizationData, handleKeyDown }) {
   const [domainInput, setDomainInput] = useState("");
   const [optimizationSettings, setOptimizationSettings] = useState(null);
   const [searchResult, setSearchResult] = useState(false);
@@ -21,12 +21,6 @@ function OptimizationSettings({ organizationData }) {
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      findOptimizationSettings();
-    }
-  }
-
   return (
     <div>
       <h1>Optimization Settings</h1>
@@ -35,7 +29,7 @@ function OptimizationSettings({ organizationData }) {
         placeholder="Enter myShopifyDomain"
         value={domainInput}
         onChange={(e) => setDomainInput(e.target.value)}
-        onKeyDown={handleKeyDown}
+        onKeyDown={(e) => handleKeyDown(e, findOptimizationSettings)}
       />
       <button onClick={findOptimizationSettings}>Search</button>
 
