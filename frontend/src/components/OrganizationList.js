@@ -8,7 +8,7 @@ function OrganizationList({ accountData }) {
     const dateB = new Date(b.createdDate);
     return dateA - dateB;
   });
-  console.log(sortedData);
+
   const handleReportClick = () => {
     setShowReport(!showReport);
   };
@@ -19,7 +19,7 @@ function OrganizationList({ accountData }) {
       <button onClick={handleReportClick}>
         {showReport ? "Hide Report" : "Show Report"}
       </button>
-      
+
       {showReport && (
         <table>
           <thead>
@@ -27,11 +27,11 @@ function OrganizationList({ accountData }) {
               <th>Organization ID</th>
               <th>Date Created</th>
               <th>Status</th>
-              <th>Plan Name</th>
+              <th>Plan Type</th>
             </tr>
           </thead>
           <tbody>
-            {sortedData.map((org) => {
+            {sortedData.map((org, index) => {
               const date = new Date(org.createdDate);
               const formattedDate = `${date
                 .getDate()
@@ -40,7 +40,7 @@ function OrganizationList({ accountData }) {
                 .toString()
                 .padStart(2, "0")}/${date.getFullYear()}`;
               return (
-                <tr>
+                <tr key={index}>
                   <td>{org.organizationId}</td>
                   <td>{formattedDate}</td>
                   <td>
