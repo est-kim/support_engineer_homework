@@ -14,9 +14,9 @@ function OrganizationList({ accountData }) {
   };
 
   return (
-    <div>
-      <h1>Organization List</h1>
-      <button onClick={handleReportClick}>
+    <div className="div-container">
+      <h1 className="gradient-h1">Organization List</h1>
+      <button className="button-style" onClick={handleReportClick}>
         {showReport ? "Hide Report" : "Show Report"}
       </button>
 
@@ -37,7 +37,7 @@ function OrganizationList({ accountData }) {
               const month = (date.getMonth() + 1).toString().padStart(2, "0");
               const year = date.getFullYear();
               const formattedDate = `${day}/${month}/${year}`;
-              
+
               return (
                 <tr key={index}>
                   <td>{org.organizationId}</td>

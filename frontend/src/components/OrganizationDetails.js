@@ -20,16 +20,17 @@ function OrgDetails({ organizationData, handleKeyDown }) {
   };
 
   return (
-    <div>
-      <h1>Find Organization Details</h1>
+    <div className="div-container">
+      <h1 className="gradient-h1">Find Organization Details</h1>
       <input
+        className="input-box"
         type="text"
         placeholder="Enter orgName"
         value={orgNameInput}
         onChange={(e) => setOrgNameInput(e.target.value)}
         onKeyDown={(e) => handleKeyDown(e, findOrgDetails)}
       />
-      <button onClick={findOrgDetails}>Search</button>
+      <button className="button-style" onClick={findOrgDetails}>Search</button>
 
       {orgDetails ? (
         <div>

@@ -12,9 +12,9 @@ function CancelledOrganizations({ accountData }) {
   );
 
   return (
-    <div>
-      <h1>Cancelled Organizations</h1>
-      <button onClick={handleReportClick}>
+    <div className="div-container">
+      <h1 className="gradient-h1">Cancelled Organizations</h1>
+      <button className="button-style" onClick={handleReportClick}>
         {showReport ? "Hide Report" : "Show Report"}
       </button>
 

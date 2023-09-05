@@ -13,14 +13,12 @@ function App() {
     fetch("/api/organizationData")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched organizationData:", data);
         setOrganizationData(data);
       });
 
     fetch("/api/accountData")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched accountData:", data);
         setAccountData(data);
       });
   }, []);
@@ -32,7 +30,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
       <OptimizationSettings
         organizationData={organizationData}
         handleKeyDown={handleKeyDown}

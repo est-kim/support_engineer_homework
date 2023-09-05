@@ -1,6 +1,12 @@
 table {
   width: 70%;
   border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  background-color: rgba(242, 242, 242, 0.7);
 }
 
 th, td {
@@ -9,8 +15,61 @@ th, td {
   text-align: center;
 }
 
-th {
-  background-color: #f2f2f2;
+.app-container {
+  grid-row-gap: 100px;
+  background-image: linear-gradient(#f4f3ef, #e9dde3);
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.button-style {
+  color: #a26482;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: linear-gradient(90deg, rgba(211, 96, 152, .2), rgba(255, 128, 74, .3));
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.div-container {
+  padding: 15px 30px;
+}
+
+.gradient-h1 {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(145deg,#ff9467,#a26482,#a19eff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Arial,sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 58px;
+}
+
+.input-box {
+  width: 300px;
+  margin-right: 7px;
+}
+
+.json-box {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  overflow-x: auto;
+  box-sizing: border-box;
 }
 
 .status-active {

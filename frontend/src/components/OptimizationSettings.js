@@ -22,27 +22,33 @@ function OptimizationSettings({ organizationData, handleKeyDown }) {
   };
 
   return (
-    <div>
-      <h1>Optimization Settings</h1>
+    <div className="div-container">
+      <h1 className="gradient-h1">Optimization Settings</h1>
       <input
+        className="input-box"
         type="text"
         placeholder="Enter myShopifyDomain"
         value={domainInput}
         onChange={(e) => setDomainInput(e.target.value)}
         onKeyDown={(e) => handleKeyDown(e, findOptimizationSettings)}
       />
-      <button onClick={findOptimizationSettings}>Search</button>
+      <button className="button-style" onClick={findOptimizationSettings}>
+        Search
+      </button>
 
       {optimizationSettings ? (
         <div>
-          <pre>{JSON.stringify(optimizationSettings, null, 2)}</pre>
+          <pre className="json-box">{JSON.stringify(optimizationSettings, null, 2)}</pre>
         </div>
       ) : (
         <>
-            {searchResult && (
-                <p>No optimization settings found for the entered domain.</p>
-            )}
-            <p>Please enter a valid and/or existing domain. Example: test-account-1.myshopify.com</p>
+          {searchResult && (
+            <p>No optimization settings found for the entered domain.</p>
+          )}
+          <p>
+            Please enter a valid and/or existing domain. Example:
+            test-account-1.myshopify.com
+          </p>
         </>
       )}
     </div>
