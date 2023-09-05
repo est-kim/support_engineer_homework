@@ -2,9 +2,7 @@
 
 This project is a web-based application that generates reports on Shopify organization and account details, including optimization settings and account plans, utilizing React.js for the frontend and Express for backend.
 
-## How to Install and/or Run the Project
-This project is deployed on Vercel. Click this link to access the project: __
-
+## How to Install and Run the Project
 To run this project on your local machine, Node.js and npm must be installed in your machine. If not, it is easily available to download from the official [Node.js website](https://nodejs.org/en).
 
 1. Clone the repository:
