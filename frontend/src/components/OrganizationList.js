@@ -19,7 +19,7 @@ function OrganizationList({ accountData }) {
       <button className="button-style" onClick={handleReportClick}>
         {showReport ? "Hide Report" : "Show Report"}
       </button>
-
+      
       {showReport && (
         <table>
           <thead>

@@ -10,23 +10,24 @@ function App() {
   const [accountData, setAccountData] = useState([]);
 
   useEffect(() => {
-    fetch("/api/organizationData")
-      .then((res) => res.json())
-      .then((data) => {
-        setOrganizationData(data);
-      });
+    const fetchData = async () => {
+      const response1 = await fetch("/api/organizationData");
+      if (response1.ok) {
+        const orgData = await response1.json();
+        setOrganizationData(orgData);
+      }
 
-    fetch("/api/accountData")
-      .then((res) => res.json())
-      .then((data) => {
-        setAccountData(data);
-      });
+      const response2 = await fetch("/api/accountData");
+      if (response2.ok) {
+        const accData = await response2.json();
+        setAccountData(accData);
+      }
+    };
+    fetchData();
   }, []);
 
   const handleKeyDown = (e, callback) => {
-    if (e.key === "Enter") {
-      callback();
-    }
+    if (e.key === "Enter") callback();
   };
 
   return (

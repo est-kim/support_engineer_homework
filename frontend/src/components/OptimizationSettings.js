@@ -35,7 +35,6 @@ function OptimizationSettings({ organizationData, handleKeyDown }) {
       <button className="button-style" onClick={findOptimizationSettings}>
         Search
       </button>
-
       {optimizationSettings ? (
         <div>
           <pre className="json-box">{JSON.stringify(optimizationSettings, null, 2)}</pre>

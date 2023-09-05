@@ -71,5 +71,5 @@ For data persistence, data integrity, and more complex queries, a relational dat
 #### Docker
 Docker can significantly enhance the scalability and maintainability of this application, particularly when transitioning to a microservices architecture. Utilizing Docker containers has many benefits:
 * Microservice architecture: Docker is the ideal choice for a microservices architecture as each service can be containerized, allowing for easier scaling and management
-* Container management: With the use of Docker Compose, it is simple to manage multiple comntainers, define how they interact, and scale as needed. If one service experiences higher demand, an additional container from the same Docker image can be spun up to handle the increased load
+* Container management: With the use of Docker Compose, it is simple to manage multiple containers, define how they interact, and scale as needed. If one service experiences higher demand, an additional container from the same Docker image can be spun up to handle the increased load
 * Cross platform consistency: Docker solves the issue of 'it works on my machine'. Docker containers ensure that the application runs the same way everywhere, providing a consistent environment from development to production
