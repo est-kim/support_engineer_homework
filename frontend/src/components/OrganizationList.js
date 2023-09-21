@@ -1,18 +1,27 @@
 import { useState } from "react";
 
+/**
+ * Renders a list of organizations with their details.
+ *
+ * @param {object} accountData - The account data containing organization information.
+ * @return {JSX.Element} The organization list component.
+ */
 function OrganizationList({ accountData }) {
   const [showReport, setShowReport] = useState(false);
 
+  // Sorts the account data by date
   const sortedData = [...accountData].sort((a, b) => {
     const dateA = new Date(a.createdDate);
     const dateB = new Date(b.createdDate);
     return dateA - dateB;
   });
 
+  // Toggles the visibility of the report
   const handleReportClick = () => {
     setShowReport(!showReport);
   };
 
+  // Returns a table of organizations
   return (
     <div className="div-container">
       <h1 className="gradient-h1">Organization List</h1>

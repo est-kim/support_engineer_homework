@@ -1,10 +1,18 @@
 import { useState } from "react";
 
+/**
+ * Renders the organization details component.
+ *
+ * @param {object} organizationData - The data containing information about organizations.
+ * @param {function} handleKeyDown - The event handler for keydown events.
+ * @return {JSX.Element} The rendered organization details component.
+ */
 function OrgDetails({ organizationData, handleKeyDown }) {
   const [orgNameInput, setOrgNameInput] = useState("");
   const [orgDetails, setOrgDetails] = useState(null);
   const [searchResult, setSearchResult] = useState(false);
 
+  // Finds the organization details for a given orgName
   const findOrgDetails = () => {
     setSearchResult(true);
     const foundOrg = organizationData.find(
@@ -19,6 +27,7 @@ function OrgDetails({ organizationData, handleKeyDown }) {
     }
   };
 
+  // Returns the organization details for a given orgName
   return (
     <div className="div-container">
       <h1 className="gradient-h1">Find Organization Details</h1>

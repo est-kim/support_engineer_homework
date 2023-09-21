@@ -1,10 +1,18 @@
 import { useState } from "react";
 
+/**
+ * Renders the Optimization Settings component.
+ *
+ * @param {Object} organizationData - The organization data.
+ * @param {Function} handleKeyDown - The key down event handler.
+ * @return {JSX.Element} The rendered Optimization Settings component.
+ */
 function OptimizationSettings({ organizationData, handleKeyDown }) {
   const [domainInput, setDomainInput] = useState("");
   const [optimizationSettings, setOptimizationSettings] = useState(null);
   const [searchResult, setSearchResult] = useState(false);
 
+  // Finds the optimization settings for a given domain and sets the results in state
   const findOptimizationSettings = () => {
     setSearchResult(true);
     const org = organizationData.find(
@@ -21,6 +29,7 @@ function OptimizationSettings({ organizationData, handleKeyDown }) {
     }
   };
 
+  // Returns the optimization settings for a given domain
   return (
     <div className="div-container">
       <h1 className="gradient-h1">Optimization Settings</h1>
@@ -38,7 +47,9 @@ function OptimizationSettings({ organizationData, handleKeyDown }) {
 
       {optimizationSettings ? (
         <div>
-          <pre className="json-box">{JSON.stringify(optimizationSettings, null, 2)}</pre>
+          <pre className="json-box">
+            {JSON.stringify(optimizationSettings, null, 2)}
+          </pre>
         </div>
       ) : (
         <>
